@@ -1,0 +1,55 @@
+{
+  "name": "techork/payment-es-stripe-laravel",
+  "type": "library",
+  "authors": [
+    {
+      "name": "andrea.palladio",
+      "email": "andrea.palladio@kiv.dev"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "techork/payment-es-laravel": "dev-master",
+    "eventsauce/message-repository-for-illuminate": "^1.2",
+    "stripe/stripe-php": "^16.4",
+    "symfony/serializer": "^7.2",
+    "illuminate/console": "^11.0 || ^12.0"
+  },
+  "require-dev": {
+    "pestphp/pest": "^3.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "PaymentSystem\\Laravel\\Stripe\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PaymentSystem\\Laravel\\Stripe\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:Sanchous98/payment-es.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:Sanchous98/payment-es-laravel.git"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "PaymentSystem\\Laravel\\Stripe\\PaymentStripeProvider"
+      ]
+    }
+  }
+}
