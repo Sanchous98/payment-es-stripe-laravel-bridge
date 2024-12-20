@@ -1,0 +1,59 @@
+{
+    "name": "techork/payment-es-stripe-laravel-bridge",
+    "type": "library",
+    "authors": [
+        {
+            "name": "andrea.palladio",
+            "email": "andrea.palladio@kiv.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "techork/payment-es-stripe": "dev-master",
+        "techork/payment-es-laravel-bridge": "dev-master",
+        "eventsauce/message-repository-for-illuminate": "^1.2",
+        "symfony/serializer": "^7.2",
+        "illuminate/console": "^11.36"
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "PaymentSystem\\Laravel\\Stripe\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PaymentSystem\\Laravel\\Stripe\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:Sanchous98/payment-es.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:Sanchous98/payment-es-stripe.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:Sanchous98/payment-es-laravel-bridge.git"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PaymentSystem\\Laravel\\Stripe\\PaymentStripeProvider"
+            ]
+        }
+    }
+}
